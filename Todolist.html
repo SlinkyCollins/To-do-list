@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do Bootstrap</title>
+    <link rel="stylesheet" href="Todolist.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="mb-4">To-Do List</h2>
+
+      <!-- Output for showing errors -->
+      <div id="showError"></div>
+
+      <!-- Input for new task -->
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          placeholder="New Task"
+          class="form-control"
+          id="newTask"
+          autofocus
+        />
+        <div class="input-group-append">
+          <button class="btn btn-primary" onclick="addTask()">Add Task</button>
+        </div>
+      </div>
+
+      <!-- Task list table -->
+      <table class="table table-bordered table-hover" id="taskTable">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Time added</th>
+            <th>Date Added</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="taskList"></tbody>
+      </table>
+
+      <!-- Buttons for array methods -->
+      <div class="btn-group d-flex" role="group">
+        <button class="btn btn-secondary flex-fill" onclick="addToStart()">
+          Add to start
+        </button>
+        <button class="btn btn-danger flex-fill" onclick="deleteFirst()">
+          Delete First
+        </button>
+        <button class="btn btn-danger flex-fill" onclick="deleteLast()">
+          Delete last
+        </button>
+        <button class="btn btn-danger flex-fill" onclick="deleteAny()">
+          Delete Any
+        </button>
+        <button class="btn btn-warning flex-fill" onclick="editAny()">
+          Edit any
+        </button>
+        <button class="btn btn-danger flex-fill" onclick="deleteAll()">
+          Delete all
+        </button>
+      </div>
+    </div>
+
+    <script src="Todolist.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
